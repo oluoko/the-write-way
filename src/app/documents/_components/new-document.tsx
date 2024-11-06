@@ -21,7 +21,7 @@ const NewDocument = () => {
     {
       component: (
         <button onClick={() => createNewDoc()}>
-          <Card className="w-[150px] hover:border hover:border-blue-500 hover:text-blue-500 cursor-pointer rounded-lg">
+          <Card className="w-[140px] md:w-[150px] hover:border hover:border-blue-500 hover:text-blue-500 cursor-pointer rounded-lg">
             <CardHeader></CardHeader>
             <CardContent className="flex items-center justify-center">
               <Plus size={100} />

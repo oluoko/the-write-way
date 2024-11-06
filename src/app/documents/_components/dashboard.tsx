@@ -1,5 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import IntroPage from "./intro-page";
+import NewDocument from "./new-document";
 
 const Dashboard = async () => {
   const { userId } = await auth();
@@ -7,7 +8,11 @@ const Dashboard = async () => {
   if (!userId) {
     return <IntroPage />;
   }
-  return <div></div>;
+  return (
+    <div>
+      <NewDocument />
+    </div>
+  );
 };
 
 export default Dashboard;

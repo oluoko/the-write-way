@@ -1,24 +1,28 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Karla } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const karla = Karla({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-karla",
+  weight: ["800", "900"],
+  variable: "--font-montserrat",
 });
 
 const Logo = () => {
   return (
-    <div className="flex items-center">
-      <Link href="/">
-        <Image src="/logo.svg" alt="Logo" width={30} height={30} />
-      </Link>
-      <h2 className={cn("text-2xl ml-2 font-bold", karla.className)}>
+    <Link href="/" className="flex items-center">
+      <Image src="/logo.svg" alt="Logo" width={30} height={30} />
+
+      <h2
+        className={cn(
+          "textlg md:text-2xl ml-2 font-bold",
+          montserrat.className
+        )}
+      >
         The Write Way
       </h2>
-    </div>
+    </Link>
   );
 };
 

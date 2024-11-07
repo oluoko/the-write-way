@@ -18,7 +18,7 @@ const IntroPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col-reverse md:flex-row md:justify-between items-center justify-center h-full md:h-[calc(100vh-80px)]bg-gradient-to-t from-blue-100 to-white dark:from-gray-900 dark:to-gray-800">
+    <div className="flex flex-col-reverse md:flex-row md:justify-between items-center justify-center h-full md:h-[calc(100vh-50px)] bg-gradient-to-t from-blue-100 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="w-[99%]md:w-2/3 flex flex-col items-center justify-center md:ml-6 p-4">
         <main className="mx-auto text-center">
           <h1

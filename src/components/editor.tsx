@@ -1,4 +1,7 @@
-import ReactQuill from "react-quill-new";
+"use client";
+
+import dynamic from "next/dynamic";
+import { useMemo } from "react";
 import "react-quill-new/dist/quill.snow.css";
 
 interface EditorProps {
@@ -40,6 +43,11 @@ const formats = [
 ];
 
 export default function Editor({ onChange, value }: EditorProps) {
+  const ReactQuill = useMemo(
+    () => dynamic(() => import("react-quill-new"), { ssr: false }),
+    []
+  );
+
   return (
     <div>
       <ReactQuill

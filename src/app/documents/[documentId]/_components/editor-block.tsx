@@ -94,13 +94,12 @@ const EditorBlock: React.FC<EditorBlockProps> = ({ document }) => {
   return (
     <div className="mx-2 md:mx-4">
       <div>
-        <form
-          onSubmit={onDeleteChange}
-          className="flex float-right items-center gap-2 md:gap-4"
-        >
-          <DrawerAi />
-          <Button type="submit">Delete</Button>
-        </form>
+        <div className="flex float-right items-center gap-2 md:gap-4">
+          <DrawerAi description={document?.description} />
+          <form onSubmit={onDeleteChange}>
+            <Button type="submit">Delete</Button>
+          </form>
+        </div>
       </div>
       <Form {...EditorForm}>
         <form onSubmit={EditorForm.handleSubmit(onUpdateChange)}>

@@ -18,6 +18,7 @@ import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { revalidatePath } from "next/cache";
 import { useToast } from "@/hooks/use-toast";
+import DrawerAi from "./drawer-ai";
 
 const EditorFormSchema = z.object({
   title: z.string().min(2).max(255),
@@ -93,7 +94,11 @@ const EditorBlock: React.FC<EditorBlockProps> = ({ document }) => {
   return (
     <div className="mx-2 md:mx-4">
       <div>
-        <form onSubmit={onDeleteChange} className="flex float-right">
+        <form
+          onSubmit={onDeleteChange}
+          className="flex float-right items-center gap-2 md:gap-4"
+        >
+          <DrawerAi />
           <Button type="submit">Delete</Button>
         </form>
       </div>

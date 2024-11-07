@@ -44,8 +44,7 @@ const IntroPage = () => {
               {
                 icon: PenTool,
                 title: "Intuitive Editing",
-                description:
-                  "Seamless writing experience with real-time collaboration",
+                description: "Seamless writing experience.",
               },
               {
                 icon: Brain,

@@ -76,7 +76,6 @@
 *::-webkit-scrollbar-thumb {
   background-color: rgba(155, 167, 184, 1);
   border-radius: 15px;
-  border: 2px solid #020617;
   max-height: 80px;
 }
 

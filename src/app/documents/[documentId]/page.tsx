@@ -15,9 +15,8 @@ const SingleDocumentPage = async ({ params }: SingleDocumentPageProps) => {
   });
 
   return (
-    <div>
-      <h1>{document?.title}</h1>
-      <EditorBlock />
+    <div className="mt-3 md:mt-6">
+      <EditorBlock document={document} />
     </div>
   );
 };

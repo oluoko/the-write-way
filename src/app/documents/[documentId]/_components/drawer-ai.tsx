@@ -38,10 +38,11 @@ export default function DrawerAi({ description }: DrawerProps) {
   return (
     <div>
       <Drawer open={open} onOpenChange={setOpen}>
-        <DrawerTrigger>
-          <Button variant="outline" onClick={handleAiSuggestion}>
-            Ask Your AI(gpt-3.5-turbo)
-          </Button>
+        <DrawerTrigger
+          onClick={handleAiSuggestion}
+          className="border border-1 py-2 px-4 rounded hover:opacity-50"
+        >
+          Ask Your AI(gpt-3.5-turbo)
         </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
@@ -50,7 +51,7 @@ export default function DrawerAi({ description }: DrawerProps) {
               writing?
             </DrawerTitle>
             {loading ? (
-              <Loader className="flex mx-auto justify=center animate-spin" />
+              <Loader className="flex mx-auto justify=center animate-spin m-4" />
             ) : (
               <DrawerDescription className="whitespace-pre-wrap">
                 {aiSuggestion.length > 0 && <p>{aiSuggestion}</p>}

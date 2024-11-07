@@ -37,9 +37,8 @@ export async function DELETE(
     const deletedDocument = await db.document.delete({
       where: { id: params.documentId, userId: userId },
     });
-
-    redirect("/");
-    revalidatePath("/");
+    revalidatePath("/documents");
+    redirect("/documents");
 
     return new NextResponse("Document Deleted Successfully", { status: 200 });
   } catch (error) {

@@ -15,9 +15,15 @@ const NewDocument = () => {
   const { toast } = useToast();
   const router = useRouter();
 
-  const createNewDoc = async () => {
+  const createNewDoc = async (
+    title: string = "Untitled Document",
+    description: string = ""
+  ) => {
     try {
-      const response = await axios.post("/api/document/new");
+      const response = await axios.post("/api/document/new", {
+        title: title,
+        description: description,
+      });
 
       toast({
         title: "Document created",
@@ -33,7 +39,7 @@ const NewDocument = () => {
     {
       component: (
         <button onClick={() => createNewDoc()}>
-          <Card className="w-[140px] md:w-[150px] hover:border hover:border-blue-500 hover:text-blue-500 cursor-pointer rounded-lg">
+          <Card className="max-w-[140px] md:max-w-[150px] max-h-[220px] hover:border hover:border-blue-500 hover:text-blue-500 cursor-pointer rounded-lg">
             <CardHeader></CardHeader>
             <CardContent className="flex items-center justify-center">
               <Plus size={100} />
@@ -43,6 +49,80 @@ const NewDocument = () => {
         </button>
       ),
       footer: "Blank Document",
+    },
+    {
+      component: (
+        <button
+          onClick={() =>
+            createNewDoc(
+              "AI Generated Story",
+              `[Exposition]
+
+              [Rising Action]
+
+              [Climax]
+
+              [Falling Action]
+
+              [Denouement]`
+            )
+          }
+        >
+          <Card className="max-w-[140px] md:max-w-[150px] max-h-[220px] hover:border hover:border-blue-500 hover:text-blue-500 cursor-pointer rounded-lg">
+            <CardHeader></CardHeader>
+            <CardContent className="max-h-full max-w-full p-2 overflow-hidden flex flex-col items-start gap-[12px]">
+              <p className="text-[10px] ">[Exposition]</p>
+              <p className="text-[10px] ">[Rising Action]</p>
+              <p className="text-[10px] ">[Climax]</p>
+              <p className="text-[10px] ">[Falling Action]</p>
+              <p className="text-[10px] ">[Denouement]</p>
+            </CardContent>
+            <CardFooter></CardFooter>
+          </Card>
+        </button>
+      ),
+      footer: "AI Story-telling Template",
+    },
+
+    // a resume template
+    {
+      component: (
+        <button
+          onClick={() =>
+            createNewDoc(
+              "Resume Template",
+              `[Name]
+
+              [Email]
+
+              [Phone]
+
+              [Experience]
+
+              [Education]
+
+              [Skills]
+
+              [Achievements]`
+            )
+          }
+        >
+          <Card className="max-w-[140px] md:max-w-[150px] max-h-[220px] hover:border hover:border-blue-500 hover:text-blue-500 cursor-pointer rounded-lg">
+            <CardHeader></CardHeader>
+            <CardContent className="h-full w-full p-2 overflow-hidden flex flex-col items-start">
+              <p className="text-[10px] ">[Name]</p>
+              <p className="text-[10px] ">[Email]</p>
+              <p className="text-[10px] ">[Phone]</p>
+              <p className="text-[10px] ">[Experience]</p>
+              <p className="text-[10px] ">[Education]</p>
+              <p className="text-[10px] ">[Skills]</p>
+              <p className="text-[10px] ">[Achievements]</p>
+            </CardContent>
+            <CardFooter></CardFooter>
+          </Card>
+        </button>
+      ),
+      footer: "AI Resume Template",
     },
   ];
 

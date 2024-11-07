@@ -11,11 +11,13 @@ export async function POST(req: Request) {
       return new NextResponse("User not authenticated", { status: 401 });
     }
 
+    const { title, description } = await req.json();
+
     const createNewDoc = await db.document.create({
       data: {
         userId: userId,
-        title: "Untitled Document",
-        description: "",
+        title: title,
+        description: description,
       },
     });
 

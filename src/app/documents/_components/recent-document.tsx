@@ -48,7 +48,7 @@ const RecentDocument = async () => {
                   )}
                 </CardContent>
                 <CardFooter className="w-[147px] h-30%] flex flex-col gap-2 items-start border-t border-gray-200/50  hover:border-blue-500 px-2 py-1">
-                  <div className="w-full overflow-hidden max-h-[26px] text-sm border-b border-gray-200/50">
+                  <div className="w-full overflow-hidden max-h-[24px] text-sm border-b border-gray-200/50">
                     {document.title}
                   </div>
                   <div className="flex gap-2 h-[40%] w-full">

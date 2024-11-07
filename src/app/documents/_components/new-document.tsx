@@ -1,19 +1,31 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 import { Plus } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const NewDocument = () => {
+  const { toast } = useToast();
+  const router = useRouter();
+
   const createNewDoc = async () => {
     try {
       const response = await axios.post("/api/document/new");
+
+      toast({
+        title: "Document created",
+        description: "Your document has been created",
+        variant: "success",
+      });
+
+      router.push(`/documents/${response.data.id}`);
     } catch (error) {}
   };
 

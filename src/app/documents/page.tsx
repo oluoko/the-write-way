@@ -2,7 +2,7 @@ import Dashboard from "./_components/dashboard";
 
 const DocumentsPage = () => {
   return (
-    <div className="md:h-[calc(100vh-80px)]">
+    <div className="pb-2 md:pb-8">
       <Dashboard />
     </div>
   );

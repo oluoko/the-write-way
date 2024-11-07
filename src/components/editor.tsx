@@ -46,7 +46,7 @@ export default function Editor({ onChange, value }: EditorProps) {
         theme="snow"
         value={value}
         onChange={onChange}
-        className="h-[60vh] mb-4  md:mb-6 whitespace-pre-wrap"
+        className="h-[55vh] mb-2 whitespace-pre-wrap"
         modules={modules}
         formats={formats}
       />

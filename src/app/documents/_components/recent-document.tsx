@@ -42,13 +42,13 @@ const RecentDocument = async () => {
               <Card className="h-[220px] w-[140px] md:w-[150px]  rounded-lg hover:border hover:border-blue-500">
                 <CardContent className="h-[70%] overflow-hidden  flex flex-col items-start px-2 py-1">
                   {!!document.description ? (
-                    <div className="text-xs ">{document.description}</div>
+                    <div className="text-[7px]">{document.description}</div>
                   ) : (
                     <BookText size={60} className="w-full h-full" />
                   )}
                 </CardContent>
                 <CardFooter className="w-[147px] h-30%] flex flex-col gap-2 items-start border-t border-gray-200/50  hover:border-blue-500 px-2 py-1">
-                  <div className="w-full overflow-hidden h-[60%] text-sm">
+                  <div className="w-full overflow-hidden max-h-[26px] text-sm border-b border-gray-200/50">
                     {document.title}
                   </div>
                   <div className="flex gap-2 h-[40%] w-full">
